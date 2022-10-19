@@ -12,7 +12,7 @@ export default function Navbar({ user, setUser }) {
     }
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-light" style={{ marginBottom: '30px' }}>
+    <nav className="navbar navbar-expand-lg bg-light" style={{ marginBottom: '50px', marginTop: '20px', borderRadius: '10px' }}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Apteka App</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ export default function Navbar({ user, setUser }) {
                 <NavLink className="nav-link" to="/profile"> Личный кабинет</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/logout">Выход</a>
+                <a onClick={logoutHandler} className="nav-link" href="/logout">Выход</a>
               </li>
             </>
             )}

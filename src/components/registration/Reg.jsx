@@ -34,6 +34,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputLogin1" className="form-label">login</label>
         <input
+          required
           onChange={changeHandler}
           value={input.login}
           name="login"
@@ -45,6 +46,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
         <input
+          required
           onChange={changeHandler}
           value={input.email}
           name="email"
@@ -57,6 +59,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
         <input
+          required
           onChange={changeHandler}
           value={input.password}
           name="password"
@@ -68,6 +71,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputFirstName1" className="form-label">Имя</label>
         <input
+          required
           onChange={changeHandler}
           value={input.firstname}
           name="firstname"
@@ -79,6 +83,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputLastName1" className="form-label">Фамилия</label>
         <input
+          required
           onChange={changeHandler}
           value={input.lastname}
           name="lastname"
@@ -90,6 +95,7 @@ export default function Reg({ setCurrentUser }) {
       <div className="mb-3">
         <label htmlFor="exampleInputTel1" className="form-label">Telephone</label>
         <input
+          required
           onChange={changeHandler}
           value={input.phone}
           name="phone"
@@ -102,6 +108,7 @@ export default function Reg({ setCurrentUser }) {
         <label htmlFor="exampleInputCity1" className="form-label">
           City
           <input
+            required
             onChange={changeHandler}
             value={input.city}
             name="city"
