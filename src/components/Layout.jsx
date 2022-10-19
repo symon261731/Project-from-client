@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import { StaticRouter } from 'react-router-dom/server';
 import App from './App';
 
 export default function Layout({ initState }) {
@@ -17,7 +18,7 @@ export default function Layout({ initState }) {
         />
         <script defer src="/app.js" />
         <script defer src="/vendor.js" />
-        <title>Document</title>
+        <title>Ебучая аптека</title>
       </head>
       <body>
         <div id="root">
