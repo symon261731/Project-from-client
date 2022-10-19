@@ -5,10 +5,10 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './render/indexRender';
-import regRender from './render/regRender';
-import apiAuth from './render/api/apiAuth';
-import authRender from './render/authRender';
+import indexRouter from './routes/indexRender';
+import regRender from './routes/regRender';
+import apiAuth from './routes/api/apiAuth';
+import authRender from './routes/authRender';
 
 require('dotenv').config();
 
