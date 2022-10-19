@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "swag",
-    "password": 123,
+    "password": "123",
     "database": "etobaza",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -20,5 +20,4 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-  
 }
