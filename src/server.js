@@ -6,6 +6,7 @@ import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './render/indexRender';
+import regRender from './render/regRender';
 
 require('dotenv').config();
 
@@ -42,5 +43,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/reg', regRender);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
