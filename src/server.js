@@ -5,6 +5,7 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
+import indexRouter from './render/indexRender';
 
 require('dotenv').config();
 
@@ -28,18 +29,17 @@ const sessionConfig = {
   },
 };
 
-app.use((req, res, next) => {
-  res.locals.path = req.originalUrl;
-  res.locals.bla = 'BLABLA';
-  next();
-});
-
 app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
 
-// app.use();
+app.use((req, res, next) => {
+  res.locals.path = req.originalUrl;
+  next();
+});
+
+app.use('/', indexRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
