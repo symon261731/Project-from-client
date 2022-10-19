@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function OneCard({ info }) {
+export default function OneCard({ info, user }) {
   return (
     <a className="card" style={{ width: '18rem' }} href="#">
       <img src={info.url} className="card-img-top" alt="..." />
@@ -16,7 +16,16 @@ export default function OneCard({ info }) {
           {' '}
           {info.fixPrice}
         </p>
-        <button type="submit" className="btn btn-primary">Купить</button>
+        {!user && (
+        <>
+          <button type="submit" className="btn btn-primary" hidden>Купить</button>
+        </>
+        )}
+        {user && (
+        <>
+          <button type="submit" className="btn btn-primary">Купить</button>
+        </>
+        )}
       </div>
     </a>
   );
