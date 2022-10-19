@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function OneCard({ info }) {
+export default function OneCard({ info, user }) {
   return (
-    <div className="card" style="width: 18rem;">
+    <a className="card" style={{ width: '18rem' }} href="#">
       <img src={info.url} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{info.name}</h5>
@@ -16,8 +16,17 @@ export default function OneCard({ info }) {
           {' '}
           {info.fixPrice}
         </p>
-        <button type="submit" className="btn btn-primary">Купить</button>
+        {!user && (
+        <>
+          <button type="submit" className="btn btn-primary" hidden>Купить</button>
+        </>
+        )}
+        {user && (
+        <>
+          <button type="submit" className="btn btn-primary">Купить</button>
+        </>
+        )}
       </div>
-    </div>
+    </a>
   );
 }
