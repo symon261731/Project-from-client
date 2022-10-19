@@ -5,6 +5,7 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
+import indexRouter from './render/indexRender';
 
 require('dotenv').config();
 
@@ -41,5 +42,6 @@ app.use(express.json());
 app.use(session(sessionConfig));
 
 // app.use();
+app.use('/', indexRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
