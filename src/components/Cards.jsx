@@ -1,8 +1,11 @@
 import React from 'react';
 import OneCard from './OneCard';
 
-export default function Cards() {
+export default function Cards({ info }) {
   return (
-    <div>Cards</div>
+    <ul>
+      <li>Сервер Работает</li>
+      {/* {info?.map((el) => <OneCard key={el.id} info={el} />)} */}
+    </ul>
   );
 }

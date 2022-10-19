@@ -2,8 +2,10 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('Layout', {});
+router.get('/', async (req, res) => {
+//   const entries = await Entry.findAll({ order: [['id', 'DESC']] });
+  const initState = {};
+  res.render('Layout', { initState });
 });
 
 export default router;
