@@ -1,10 +1,12 @@
 import express from 'express';
+import { Product } from '../db/models';
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
 //   const entries = await Entry.findAll({ order: [['id', 'DESC']] });
-  const initState = {};
+  const productDB = await Product.findAll({});
+  const initState = { productDB };
   res.render('Layout', { initState });
 });
 
