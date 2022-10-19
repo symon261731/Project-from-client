@@ -5,15 +5,27 @@ import { User } from '../../db/models';
 const router = express.Router();
 
 router.post('/reg', async (req, res) => {
-  const { email, password } = req.body;
-
+  const {
+    login, email, password, firstname, lastname, phone, city, avatar,
+  } = req.body;
+  if (User.findOne({ email })) return res.json({ status: 400, message: 'this email not envaible' });
   if (!email || !password) return res.json({ status: 400, message: 'email or password not valid' });
   const hashPassword = await hash(password, 10);
 
   try {
-    const newUser = await User.create({ email, password: hashPassword });
+    const newUser = await User.create({
+      login,
+      email,
+      password: hashPassword,
+      firstname,
+      lastname,
+      phone,
+      city,
+      avatar,
+    });
     req.session.user = { id: newUser.id, email: newUser.email };
     res.json({ id: newUser.id, email: newUser.email });
+    res.sendStatus(200);
   } catch (err) {
     console.error(err);
   }

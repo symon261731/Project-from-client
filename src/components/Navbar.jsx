@@ -20,11 +20,11 @@ export default function Navbar({ user, setUser }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">Главная</NavLink>
+            </li>
             {!user && (
             <>
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/home">Главная</NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/reg">Регистрация</NavLink>
               </li>
@@ -35,9 +35,6 @@ export default function Navbar({ user, setUser }) {
             )}
             {user && (
             <>
-              <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to="/home">Главная</NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/profile"> Личный кабинет</NavLink>
               </li>

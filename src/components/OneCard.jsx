@@ -14,7 +14,7 @@ export default function OneCard({ info, user }) {
         <p className="card-text">
           Цена со скидкой:
           {' '}
-          {info.fixPrice}
+          {Number(info.price - ((info.price / 100) * info.sale))}
         </p>
         {!user && (
         <>

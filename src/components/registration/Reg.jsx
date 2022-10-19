@@ -18,19 +18,19 @@ export default function Reg({ setCurrentUser }) {
   const navigate = useNavigate();
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/reg/getInfo', {
+    const response = await fetch('/api/reg', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(input),
     });
     if (response.ok) {
-      // const newUserFromRouter = await response.json();
-      // setCurrentUser(newUserFromRouter);
+      const newUserFromRouter = await response.json();
+      setCurrentUser(newUserFromRouter);
       navigate('/');
     }
   };
   return (
-    <form onSubmit={onSubmitHandler} action="/reg/getInfo" method="POST">
+    <form onSubmit={onSubmitHandler} action="/api/reg" method="POST">
       <div className="mb-3">
         <label htmlFor="exampleInputLogin1" className="form-label">login</label>
         <input
@@ -107,7 +107,7 @@ export default function Reg({ setCurrentUser }) {
             name="city"
             type="text"
             className="form-control"
-            id="exampleInputPassword1"
+            id="exampleInputCity1"
           />
         </label>
       </div>
