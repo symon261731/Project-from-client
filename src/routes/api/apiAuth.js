@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { User } from '../../db/models';
 
 const router = express.Router();
+const trash = [];
 
 router.post('/reg', async (req, res) => {
   // проверка на аватарку
@@ -36,6 +37,7 @@ router.post('/reg', async (req, res) => {
       city,
       avatar,
     });
+    // req.session.trush = [];
     req.session.user = {
       id: newUser.id,
       email: newUser.email,
@@ -81,7 +83,7 @@ router.post('/auth', async (req, res) => {
     const isValid = await bcrypt.compare(password, userFromDb.password);
 
     if (!isValid) return res.status(400).json({ message: 'email or password is invalid' });
-
+    // req.session.trush = [];
     req.session.user = {
       id: userFromDb.id,
       email: userFromDb.email,
@@ -105,10 +107,27 @@ router.post('/auth', async (req, res) => {
   }
 });
 
-router.get('/auth/logout', async (req, res) => {
+router.get('/logout', async (req, res) => {
   res.clearCookie('user_sid'); // Удалить куку
   req.session.destroy(); // Завершить сессию
   res.sendStatus(200);
+});
+
+router.post('/trush', async (req, res) => {
+  console.log(req.body);
+  const {
+    // eslint-disable-next-line no-unused-vars
+    id, url, name, price, sale, amount, describe,
+  } = req.body;
+  try {
+    const CardNew = {
+      id, url, name, price, sale, amount, describe,
+    };
+    trash.push(CardNew);
+    req.session.trush = trash;
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 export default router;

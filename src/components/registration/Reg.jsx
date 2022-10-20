@@ -14,7 +14,7 @@ export default function Reg({ setUser }) {
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
     const data = await response.json();
-    // console.log(data);
+
     if (response.ok) {
       setUser(data);
       navigate('/');

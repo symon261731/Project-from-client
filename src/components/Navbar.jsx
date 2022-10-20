@@ -5,7 +5,7 @@ export default function Navbar({ user, setUser }) {
   const navigate = useNavigate();
   const logoutHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/authorization/logout');
+    const response = await fetch('/api/logout');
     if (response.ok) {
       setUser(null);
       navigate('/');

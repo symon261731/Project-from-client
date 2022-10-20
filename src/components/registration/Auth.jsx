@@ -15,7 +15,7 @@ export default function Auth({ setUser }) {
     });
 
     const data = await response.json();
-    // console.log(data);
+
     if (response.ok) {
       setUser(data);
       navigate('/');

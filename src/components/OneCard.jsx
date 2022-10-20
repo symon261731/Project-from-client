@@ -1,6 +1,17 @@
 import React from 'react';
 
 export default function OneCard({ info, user }) {
+  const onClickHandler = async (e) => {
+    e.preventDefault();
+    const response = await fetch('/api/trush', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(info),
+    });
+  };
+
   return (
     <div className="oneCard">
       <li className="card">
@@ -25,7 +36,7 @@ export default function OneCard({ info, user }) {
                 Подробнее
               </button>
             </div>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {/* <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -41,15 +52,16 @@ export default function OneCard({ info, user }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {user && (
             <>
-              <button type="submit" className="btn btn-primary">Купить</button>
+              <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
             </>
             )}
           </div>
         </div>
       </li>
+
     </div>
   );
 }

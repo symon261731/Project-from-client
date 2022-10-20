@@ -5,7 +5,6 @@ import { User } from '../db/models';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  console.log('in profile');
   const initState = {};
   res.render('Layout', { initState });
 });
