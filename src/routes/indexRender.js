@@ -10,4 +10,10 @@ router.get('/', async (req, res) => {
   res.render('Layout', { initState });
 });
 
+router.get('/home', async (req, res) => {
+  //   const entries = await Entry.findAll({ order: [['id', 'DESC']] });
+  const productDB = await Product.findAll({});
+  res.json({ productDB });
+});
+
 export default router;
