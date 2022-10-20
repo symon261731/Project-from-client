@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CardsForProfile from './CardsForProfile';
 // import { Link } from 'react-router-dom';
 
 export default function Profile({ user, filterCards }) {
@@ -8,7 +9,13 @@ export default function Profile({ user, filterCards }) {
   // const [phone, setPhone] = useState(user.phone || '');
   const [edit, setEdit] = useState(true);
 
-  const [profile, setProfile] = useState({ firstName: user?.firstname, city: user?.city, phone: user?.phone });
+  const [profile, setProfile] = useState(
+    {
+      firstName: user?.firstname,
+      city: user?.city,
+      phone: user?.phone,
+    },
+  );
 
   async function editHandler() {
     setEdit(false);
@@ -62,7 +69,7 @@ export default function Profile({ user, filterCards }) {
         <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
       </div>
       <div className="cards">
-        {filterCards || null}
+        <CardsForProfile />
       </div>
     </div>
   );
