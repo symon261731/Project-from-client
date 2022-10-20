@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Profile({ user, filterCards }) {
   return (
@@ -35,10 +36,10 @@ export default function Profile({ user, filterCards }) {
             </p>
           </li>
         </ul>
-        <a href="#" className="card-link">Изменить профиль</a>
+        <Link to="/" className="card-link">Изменить профиль</Link>
       </div>
       <div className="cards">
-        {filterCards}
+        {filterCards || null}
       </div>
     </div>
   );

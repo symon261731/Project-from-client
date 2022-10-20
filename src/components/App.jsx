@@ -4,6 +4,7 @@ import Cards from './Cards';
 import Navbar from './Navbar';
 import Reg from './registration/Reg';
 import Auth from './registration/Auth';
+import Profile from './Profile';
 
 export default function App({ productDB }) {
   const [user, setUser] = useState(null);
@@ -15,6 +16,7 @@ export default function App({ productDB }) {
         <Route path="/" element={<Cards info={productDB} />} />
         <Route path="/reg" element={<Reg setUser={setUser} />} />
         <Route path="/auth" element={<Auth setUser={setUser} />} />
+        <Route path="/profile" element={<Profile user={user} />} />
       </Routes>
     </div>
   );

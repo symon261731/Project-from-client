@@ -9,6 +9,7 @@ import indexRouter from './routes/indexRender';
 import regRender from './routes/regRender';
 import apiAuth from './routes/api/apiAuth';
 import authRender from './routes/authRender';
+import profileRender from './routes/profileRender';
 
 require('dotenv').config();
 
@@ -49,5 +50,6 @@ app.use('/', indexRouter);
 app.use('/reg', regRender);
 app.use('/auth', authRender);
 app.use('/api', apiAuth);
+app.use('/profile', profileRender);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
