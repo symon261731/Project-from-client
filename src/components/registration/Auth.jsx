@@ -15,6 +15,7 @@ export default function Auth({ setUser }) {
     });
 
     const data = await response.json();
+    console.log(data);
     if (response.ok) {
       setUser(data);
       navigate('/');
@@ -25,6 +26,7 @@ export default function Auth({ setUser }) {
   };
   return (
     <div>
+      <span>{error}</span>
       <h1>Авторизация</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>

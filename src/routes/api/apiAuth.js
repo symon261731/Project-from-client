@@ -71,8 +71,24 @@ router.post('/auth', async (req, res) => {
 
     if (!isValid) return res.status(400).json({ message: 'email or password is invalid' });
 
-    req.session.user = { id: userFromDb.id, email: userFromDb.email };
-    res.json({ id: userFromDb.id, email: userFromDb.email });
+    req.session.user = {
+      id: userFromDb.id,
+      email: userFromDb.email,
+      firstname: userFromDb.firstname,
+      lastname: userFromDb.lastname,
+      phone: userFromDb.phone,
+      city: userFromDb.city,
+      avatar: userFromDb.avatar,
+    };
+    res.json({
+      id: userFromDb.id,
+      email: userFromDb.email,
+      firstname: userFromDb.firstname,
+      lastname: userFromDb.lastname,
+      phone: userFromDb.phone,
+      city: userFromDb.city,
+      avatar: userFromDb.avatar,
+    });
   } catch (err) {
     console.error(err);
   }

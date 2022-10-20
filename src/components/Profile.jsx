@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Profile({ user, filterCards }) {
+  console.log(user);
   return (
     <div className="container">
       <div className="profile">
@@ -11,7 +12,7 @@ export default function Profile({ user, filterCards }) {
             <p>
               Имя:
               {' '}
-              {user.name || null}
+              {user.firstname || null}
             </p>
           </li>
           <li>
@@ -25,7 +26,7 @@ export default function Profile({ user, filterCards }) {
             <p>
               Город:
               {' '}
-              {null}
+              {user.city || null}
             </p>
           </li>
           <li>
