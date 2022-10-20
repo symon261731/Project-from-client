@@ -5,16 +5,16 @@ import Navbar from './Navbar';
 import Reg from './registration/Reg';
 import Auth from './registration/Auth';
 
-export default function App({ productDB, user }) {
-  const [currentUser, setCurrentUser] = useState(user || null);
+export default function App({ productDB }) {
+  const [user, setUser] = useState(null);
   return (
     <div className="container">
-      <Navbar user={currentUser} setUser={setCurrentUser} />
-      <span>{currentUser}</span>
+      <Navbar user={user} setUser={setUser} />
+      <span>{user}</span>
       <Routes>
         <Route path="/" element={<Cards info={productDB} />} />
-        <Route path="/reg" element={<Reg setCurrentUser={setCurrentUser} />} />
-        <Route path="/auth" element={<Auth setCurrentUser={setCurrentUser} />} />
+        <Route path="/reg" element={<Reg setUser={setUser} />} />
+        <Route path="/auth" element={<Auth setUser={setUser} />} />
       </Routes>
     </div>
   );
