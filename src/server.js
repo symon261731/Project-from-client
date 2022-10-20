@@ -5,25 +5,31 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './render/indexRender';
-import regRender from './render/regRender';
-import apiAuth from './render/api/apiAuth';
-import authRender from './render/authRender';
+import indexRouter from './routes/indexRender';
+import regRender from './routes/regRender';
+import apiAuth from './routes/api/apiAuth';
+import authRender from './routes/authRender';
 
 require('dotenv').config();
 
 const PORT = 3000;
 const app = express();
-const FileStore = store(session);
 
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
 app.set('views', path.join(__dirname, 'components'));
 
+app.use(express.static('public'));
+app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+const FileStore = store(session);
+
 const sessionConfig = {
   name: 'user_sid',
-  secret: process.env.SESSION_SECRET ?? 'test',
-  resave: true,
+  secret: process.env.SESSION_SECRET ?? 'some bullshit',
+  resave: false,
   store: new FileStore(),
   saveUninitialized: false,
   cookie: {
@@ -31,11 +37,6 @@ const sessionConfig = {
     httpOnly: true,
   },
 };
-
-app.use(express.static('public'));
-app.use(morgan('dev'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(session(sessionConfig));
 
 app.use((req, res, next) => {
