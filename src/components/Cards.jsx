@@ -7,6 +7,9 @@ export default function Cards({ info, user }) {
   const [showTime, setShowTime] = useState(false);
   // console.log(showTime);
   const { length } = info;
+  const getThree = () => {
+    const res = Math.floor(Math.random() * length);
+  };
   const dich = [
     info[Math.floor(Math.random() * length)],
     info[Math.floor(Math.random() * length)],
