@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1;
+}
+
+body {
+    font-family: 'Montserrat';
+    position: relative;
+    background-image: url('../img/hexellence.png');
+    background-repeat: repeat;
+
+
+}
+.card-title{
+  font-size:  15px;
+  font-weight: bold;
+  text-align: center;
+}
+.oneCard{
+display: flex;
+justify-content: center;
+font-size: 12px;
+transition:all .4s ease;
+border-radius: 50px;
+border-color: aliceblue;
+}
+
+.card{
+    margin: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px black;
+    max-width: 250px;
+    max-height: 500px;
+    
+}
+
+.card-body{
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  width: 100%;
+  font-weight:bold;
+}
+
+
+
+.btn.btn-primary{
+/* justify-content: end;
+align-items: flex-end; */
+/* margin-top: 15px; */
+border-radius: 40%;
+border-color: black;
+} 
+
+.card-text{
+  font-size: 13px;
+  font-weight:500;
+}
+
+.priceTXT{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+    /* margin-bottom: 20px; */
+}
+
+.card-img-top{
+  padding: 20px;
+   width: 15%;
+   height: 50%;
+}
+.btn.btn-primary:hover{
+    transition:all .4s ease;
+    box-shadow: 0px 0px 3px black;
+    animation: scale;
+    animation-duration: 900ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+    
+}
+.oneCard:hover{
+    transition:all .4s ease;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* @media screen and (max-width:1200){
+    .oneCard {
+
+        width: 300px;
+        height: 450px;
+          }
+
+} */
