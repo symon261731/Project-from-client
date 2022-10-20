@@ -18,9 +18,8 @@ export default function OneCard({ info, user }) {
         </p>
         <div className="buttons">
           <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
+            Подробнее
           </button>
-
           <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
               <div className="modal-content">
@@ -32,7 +31,7 @@ export default function OneCard({ info, user }) {
                   ...
                 </div>
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
 
                 </div>
               </div>
