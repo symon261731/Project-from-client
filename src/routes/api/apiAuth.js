@@ -60,10 +60,14 @@ router.post('/reg', async (req, res) => {
   }
 });
 router.get('/auth', async (req, res) => {
-  const { email } = req.session.user;
-  if (email) {
-    const userFromDb = await User.findOne({ where: { email } });
-    return res.json(userFromDb);
+  if (req.session?.user) {
+    const { email } = req.session.user;
+    if (email) {
+      const userFromDb = await User.findOne({ where: { email } });
+      return res.json(userFromDb);
+    }
+  } else {
+    res.json(null);
   }
 });
 
