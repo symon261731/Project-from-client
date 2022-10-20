@@ -26,6 +26,9 @@ module.exports = {
       phone: {
         type: Sequelize.STRING,
       },
+      city: {
+        type: Sequelize.STRING,
+      },
       avatar: {
         type: Sequelize.STRING,
       },
