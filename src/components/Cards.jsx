@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import OneCard from './OneCard';
 
 export default function Cards({ info }) {
+  // const [list, setList] = useState(info || []);
   const [calendarValue, onChangeCalendar] = useState(new Date());
+  // useEffect(() => {
+  //   const data = fetch('/home', () => {
+  //     setList(data);
+  //   });
+  // }, []);
   return (
     <>
       <ul style={{
