@@ -105,14 +105,14 @@ router.post('/auth', async (req, res) => {
   }
 });
 
-router.get('/auth/logout', async (req, res) => {
+router.get('/logout', async (req, res) => {
   res.clearCookie('user_sid'); // Удалить куку
   req.session.destroy(); // Завершить сессию
   res.sendStatus(200);
 });
 
 router.post('/trush', async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const {
     id, url, name, price, sale, amount, describe,
   } = req.body;
