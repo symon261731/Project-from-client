@@ -111,4 +111,11 @@ router.get('/auth/logout', async (req, res) => {
   res.sendStatus(200);
 });
 
+router.post('/trush', async (req, res) => {
+  console.log(req.body);
+  const {
+    id, url, name, price, sale, amount, describe,
+  } = req.body;
+});
+
 export default router;

@@ -8,7 +8,6 @@ import Profile from './Profile';
 
 export default function App({ productDB, userBack }) {
   const [user, setUser] = useState(userBack);
-  console.log(user);
   console.log('FROM BACK', userBack);
   const [cards, setCards] = useState(productDB || []);
 

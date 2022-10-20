@@ -33,7 +33,6 @@ export default function Profile({ user, filterCards }) {
     }
   }
 
-  console.log(user);
   return (
     <div className="container">
       <div className="profile">
