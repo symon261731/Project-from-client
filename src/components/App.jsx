@@ -19,7 +19,7 @@ export default function App({ productDB }) {
       <Navbar user={user} setUser={setUser} />
       <span>{user?.firstname}</span>
       <Routes>
-        <Route path="/" element={<Cards user={user} info={cards} />} />
+        <Route path="/" element={<Cards info={cards} />} />
         <Route path="/reg" element={<Reg setUser={setUser} />} />
         <Route path="/auth" element={<Auth user={user} setUser={setUser} />} />
         <Route path="/profile" element={<Profile user={user} />} />

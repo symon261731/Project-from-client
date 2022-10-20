@@ -20,7 +20,7 @@ export default function Cards({ info, user }) {
       }}
       >
         {/* {list.productDB?.map((el) => <OneCard key={el.id} info={el} />)} */}
-        {info?.map((el) => <OneCard key={el.id} info={el} user={user} />)}
+        {info?.map((el) => <OneCard key={el.id} info={el} />)}
       </ul>
       <Calendar className="calendar" onChange={onChangeCalendar} value={calendarValue} />
     </>
