@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Reg({ setCurrentUser }) {
+export default function Reg({ setUser }) {
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -12,14 +13,19 @@ export default function Reg({ setCurrentUser }) {
       },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
+    const data = await response.json();
+    // console.log(data);
     if (response.ok) {
-      const data = await response.json();
-      setCurrentUser(data);
+      setUser(data);
       navigate('/');
+    } else {
+      console.log(data.message);
+      setError(data.message);
     }
   };
   return (
     <form onSubmit={onSubmitHandler} action="/api/reg" method="POST">
+      <span>{error}</span>
       <div className="mb-3">
         <label htmlFor="exampleInputLogin1" className="form-label">login</label>
         <input
