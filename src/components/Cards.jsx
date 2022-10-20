@@ -5,8 +5,7 @@ import OneCard from './OneCard';
 export default function Cards({ info, user }) {
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
-  // console.log(showTime);
-  const { length } = info;
+  // console.log(showTime);;
 
   const range = info.map((el) => el.id);
   const randomNumber = () => {
@@ -23,6 +22,7 @@ export default function Cards({ info, user }) {
     info[dich[0]],
     info[dich[1]],
     info[dich[2]],
+
   ];
   // const dich = [
   //   info[Math.floor(Math.random() * length)],
