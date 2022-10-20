@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import OneCard from './OneCard';
 
-export default function Cards({ info }) {
+export default function Cards({ info, user }) {
   // const [list, setList] = useState(info || []);
   const [calendarValue, onChangeCalendar] = useState(new Date());
   // useEffect(async () => {
@@ -20,7 +20,7 @@ export default function Cards({ info }) {
       }}
       >
         {/* {list.productDB?.map((el) => <OneCard key={el.id} info={el} />)} */}
-        {info?.map((el) => <OneCard key={el.id} info={el} />)}
+        {info?.map((el) => <OneCard key={el.id} info={el} user={user} />)}
       </ul>
       <Calendar className="calendar" onChange={onChangeCalendar} value={calendarValue} />
     </>
