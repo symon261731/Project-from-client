@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function OneCard({ info, user }) {
   return (
-    <a className="card" style={{ width: '18rem' }} href="#">
+    <li className="card" style={{ width: '18rem' }}>
       <img src={info.url} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{info.name}</h5>
@@ -16,17 +16,17 @@ export default function OneCard({ info, user }) {
           {' '}
           {Number(info.price - ((info.price / 100) * info.sale))}
         </p>
-        {!user && (
+        {/* {!user && (
         <>
           <button type="submit" className="btn btn-primary" hidden>Купить</button>
         </>
-        )}
+        )} */}
         {user && (
-        <>
-          <button type="submit" className="btn btn-primary">Купить</button>
-        </>
+          <>
+            <button type="submit" className="btn btn-primary">Купить</button>
+          </>
         )}
       </div>
-    </a>
+    </li>
   );
 }
