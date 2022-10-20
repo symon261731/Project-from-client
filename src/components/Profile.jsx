@@ -8,7 +8,7 @@ export default function Profile({ user, filterCards }) {
   // const [phone, setPhone] = useState(user.phone || '');
   const [edit, setEdit] = useState(true);
 
-  const [profile, setProfile] = useState({ firstName: user.firstname, city: user.city, phone: user.phone });
+  const [profile, setProfile] = useState({ firstName: user?.firstname, city: user?.city, phone: user?.phone });
 
   async function editHandler() {
     setEdit(false);
@@ -33,7 +33,7 @@ export default function Profile({ user, filterCards }) {
     }
   }
 
-  console.log(profile);
+  console.log(user);
   return (
     <div className="container">
       <div className="profile">

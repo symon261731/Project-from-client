@@ -6,12 +6,15 @@ import Reg from './registration/Reg';
 import Auth from './registration/Auth';
 import Profile from './Profile';
 
-export default function App({ productDB }) {
-  const [user, setUser] = useState(null);
+export default function App({ productDB, userBack }) {
+  const [user, setUser] = useState(userBack);
+  console.log(user);
+  console.log('FROM BACK', userBack);
   const [cards, setCards] = useState(productDB || []);
 
   useEffect(() => {
     fetch('/home').then((data) => data.json().then((result) => setCards(result.productDB)));
+    fetch('/api/auth').then((data) => data.json().then((result) => setUser(result)));
   }, []);
 
   return (
