@@ -1,19 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default function Profile({ user, filterCards }) {
-  console.log(user);
+  // const [firstName, setFirstName] = useState(user.firstname || '');
+  // const [city, setCity] = useState(user.city || '');
+  // const [phone, setPhone] = useState(user.phone || '');
+  const [edit, setEdit] = useState(true);
+
+  const [profile, setProfile] = useState({ firstName: user.firstname, city: user.city, phone: user.phone });
+
+  async function editHandler() {
+    setEdit(false);
+  }
+
+  function editData(e) {
+    setProfile((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function sendEdit() {
+    setEdit(true);
+    try {
+      const response = await fetch(`/profile/${user.id}`, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ profile }),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  console.log(profile);
   return (
     <div className="container">
       <div className="profile">
         <h5 className="card-title">Профиль</h5>
         <ul>
           <li>
-            <p>
-              Имя:
-              {' '}
-              {user.firstname || null}
-            </p>
+            <p>Имя: </p>
+            <textarea onChange={editData} disabled={edit} name="firstName" value={profile?.firstName} />
           </li>
           <li>
             <p>
@@ -23,21 +51,16 @@ export default function Profile({ user, filterCards }) {
             </p>
           </li>
           <li>
-            <p>
-              Город:
-              {' '}
-              {user.city || null}
-            </p>
+            <p>Город: </p>
+            <textarea onChange={editData} disabled={edit} name="city" value={profile?.city} />
           </li>
           <li>
-            <p>
-              Телефон:
-              {' '}
-              {user.phone || null}
-            </p>
+            <p>Телефон: </p>
+            <textarea onChange={editData} disabled={edit} name="phone" value={profile?.phone} />
           </li>
         </ul>
-        <Link to="/" className="card-link">Изменить профиль</Link>
+        <button type="button" className="btn btn-info" onClick={editHandler} style={{ marginRight: '5px' }}>Изменить профиль</button>
+        <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
       </div>
       <div className="cards">
         {filterCards || null}
