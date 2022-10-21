@@ -3,23 +3,12 @@ import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import MyModal from './MyModal';
 
-export default function OneCard({
-  info, user, trash, setTrash,
-}) {
-  // const onClickHandler = async (e) => {
-  //   e.preventDefault();
-  //   const response = await fetch('/api/trush', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(info),
-  //   });
-  // };
+export default function OneCard({ info, user, setTrash }) {
   const onClickHandler = (e) => {
     e.preventDefault();
     setTrash((prev) => [...prev, { info }]);
   };
+  console.log(user);
   return (
     <div className="oneCard">
       <li className="card">

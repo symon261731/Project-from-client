@@ -79,7 +79,7 @@ export default function Profile({ user, trash }) {
             <textarea onChange={editData} disabled={edit} name="city" value={profile?.city} /> */}
             <div className="input-group mb-3">
               <span className="input-group-text" id="inputGroup-sizing-default">Город: </span>
-              <input type="text" onChange={editData} disabled={edit} name="firstName" value={profile?.city} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+              <input type="text" onChange={editData} disabled={edit} name="city" value={profile?.city} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
             </div>
           </li>
           <li>
