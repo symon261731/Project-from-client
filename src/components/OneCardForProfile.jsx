@@ -6,7 +6,7 @@ export default function OneCardForProfile({ oneCard }) {
       <li className="card">
         <img src={oneCard.info.url} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{oneCard.name}</h5>
+          <h5 className="card-title">{oneCard.info.name}</h5>
           <div className="priceTXT">
             <p className="card-text">
               Исходная цена:
@@ -17,7 +17,7 @@ export default function OneCardForProfile({ oneCard }) {
               <p className="card-text">
                 Цена со скидкой:
                 {' '}
-                {Number(oneCard.price - ((oneCard.price / 100) * oneCard.sale))}
+                {Number(oneCard.info.price - ((oneCard.info.price / 100) * oneCard.info.sale))}
               </p>
             </div>
             <div className="buttons">
