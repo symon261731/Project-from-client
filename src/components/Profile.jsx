@@ -91,7 +91,7 @@ export default function Profile({ user, trash }) {
             </div>
           </li>
         </ul>
-        <button type="button" className="btn btn-info" onClick={editHandler} style={{ marginRight: '5px' }}>Изменить профиль</button>
+        <button type="button" className="btn btn-info" onClick={editHandler}>Изменить профиль</button>
         <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
       </div>
       <div className="cards">

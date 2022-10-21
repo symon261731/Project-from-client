@@ -14,7 +14,7 @@ export default function Navbar({ user, setUser }) {
   return (
     <nav className="navbar navbar-expand-lg bg-light" style={{ marginBottom: '50px', marginTop: '20px', borderRadius: '10px' }}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Apteka App</Link>
+        <Link className="navbar-brand" to="/"><img src="img/apteka.svg" alt="404" style={{ width: '25px', height: '25px' }} /></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>

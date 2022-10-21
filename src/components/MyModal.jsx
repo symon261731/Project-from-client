@@ -10,7 +10,7 @@ function MyModal({ info }) {
 
   return (
     <>
-      <Button style={{ marginBottom: '5px' }} variant="primary" onClick={handleShow}>
+      <Button variant="primary" className="_btn" onClick={handleShow}>
         Подробнее
       </Button>
 

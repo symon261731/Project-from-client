@@ -12,24 +12,35 @@ export default function Cards({
   const randomNumber = () => {
     const stack = [];
     while (stack.length <= 2) {
-      const index = (Math.random() * range.length);
+      const index = Math.round(Math.random() * range.length);
       const item = range.splice(index, 1)[0];
       stack.push(item);
     }
     return stack;
   };
-  const dich = useMemo(() => randomNumber(), []);
-  // const dich = ransdomNumber();
+  // function randomNumber(min, max, count) {
+  //   const arr = [];
+  //   let elem = 0;
+  //   for (let index = 0; index < count; index++) {
+  //     elem = Math.round(Math.random() * (max - min)) + min;
+  //     arr.push(elem);
+  //   }
+  //   return arr;
+  // }
+
+  // const dich = useMemo(() => randomNumber(), []);
+  const dich = randomNumber(0, range.length, 3);
   const some = [
     info[dich[0]],
     info[dich[1]],
     info[dich[2]],
 
   ];
+  console.log(some);
   return (
     <>
       {showTime ? (
-        <h2>
+        <h2 style={{ fontWeight: '700', fontSize: '35px' }}>
           Товары недели только для вас
           {' '}
           {user ? user.firstname : ''}

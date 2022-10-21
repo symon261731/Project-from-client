@@ -8,7 +8,6 @@ export default function OneCard({ info, user, setTrash }) {
     e.preventDefault();
     setTrash((prev) => [...prev, { info }]);
   };
-  console.log(user);
   return (
     <div className="oneCard">
       <li className="card" style={{ borderRadius: '20px' }}>
@@ -42,7 +41,7 @@ export default function OneCard({ info, user, setTrash }) {
           </Container>
           {user ? (
             <>
-              <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
+              <button onClick={onClickHandler} type="button" className="btn btn-primary" style={{ marginRight: '5px' }}>Купить</button>
             </>
           ) : null}
         </div>
