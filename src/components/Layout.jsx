@@ -27,7 +27,7 @@ export default function Layout({ initState }) {
       <body>
         <div id="root">
           <StaticRouter location={initState.path}>
-            { console.log('init statr', initState)}
+            {/* { console.log('init statr', initState)} */}
             <App {...initState} />
           </StaticRouter>
         </div>

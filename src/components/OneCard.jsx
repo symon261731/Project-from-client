@@ -1,17 +1,17 @@
 import React from 'react';
 
 export default function OneCard({ info, user }) {
-  const onClickHandler = async (e) => {
-    e.preventDefault();
-    const response = await fetch('/api/trush', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(info),
-    });
-  };
-
+  // const onClickHandler = async (e) => {
+  //   e.preventDefault();
+  //   const response = await fetch('/api/trush', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(info),
+  //   });
+  // };
+  console.log(user);
   return (
     <div className="oneCard">
       <li className="card">
@@ -35,29 +35,12 @@ export default function OneCard({ info, user }) {
               <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Подробнее
               </button>
+              {user ? (
+                <>
+                  <button type="button" className="btn btn-primary">Купить</button>
+                </>
+              ) : null}
             </div>
-            {/* <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                  </div>
-                  <div className="modal-body">
-                    ...
-                  </div>
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            {user && (
-            <>
-              <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
-            </>
-            )}
           </div>
         </div>
       </li>

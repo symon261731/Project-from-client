@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import { User } from '../../db/models';
 
 const router = express.Router();
-const trash = [];
+// const trash = [];
 
 router.post('/reg', async (req, res) => {
   // проверка на аватарку
@@ -113,21 +113,21 @@ router.get('/logout', async (req, res) => {
   res.sendStatus(200);
 });
 
-router.post('/trush', async (req, res) => {
-  console.log(req.body);
-  const {
-    // eslint-disable-next-line no-unused-vars
-    id, url, name, price, sale, amount, describe,
-  } = req.body;
-  try {
-    const CardNew = {
-      id, url, name, price, sale, amount, describe,
-    };
-    trash.push(CardNew);
-    req.session.trush = trash;
-  } catch (error) {
-    console.error(error);
-  }
-});
+// router.post('/trush', async (req, res) => {
+//   console.log(req.body);
+//   const {
+//     // eslint-disable-next-line no-unused-vars
+//     id, url, name, price, sale, amount, describe,
+//   } = req.body;
+//   try {
+//     const CardNew = {
+//       id, url, name, price, sale, amount, describe,
+//     };
+//     trash.push(CardNew);
+//     req.session.trush = trash;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
 
 export default router;
