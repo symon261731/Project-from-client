@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function OneCard({ info, user }) {
+export default function OneCard({
+  info, user, trash, setTrash,
+}) {
   // const onClickHandler = async (e) => {
   //   e.preventDefault();
   //   const response = await fetch('/api/trush', {
@@ -11,7 +13,10 @@ export default function OneCard({ info, user }) {
   //     body: JSON.stringify(info),
   //   });
   // };
-  console.log(user);
+  const onClickHandler = (e) => {
+    e.preventDefault();
+    setTrash((prev) => [...prev, { info }]);
+  };
   return (
     <div className="oneCard">
       <li className="card">
@@ -37,7 +42,7 @@ export default function OneCard({ info, user }) {
               </button>
               {user ? (
                 <>
-                  <button type="button" className="btn btn-primary">Купить</button>
+                  <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
                 </>
               ) : null}
             </div>
