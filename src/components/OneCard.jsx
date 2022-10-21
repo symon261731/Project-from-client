@@ -22,17 +22,17 @@ export default function OneCard({ info, user }) {
             <p className="card-text">
               Исходная цена:
               {' '}
-              {info.price}
+              {`${info.price.toFixed(2)} руб.`}
             </p>
             <div className="priceTXT1">
               <p className="card-text">
                 Цена со скидкой:
                 {' '}
-                {Number(info.price - ((info.price / 100) * info.sale))}
+                {`${(Number(info.price - ((info.price / 100) * info.sale))).toFixed(2)} руб.`}
               </p>
             </div>
             <div className="buttons">
-              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Подробнее
               </button>
             </div>
