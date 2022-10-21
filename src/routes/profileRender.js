@@ -13,7 +13,7 @@ router.post('/:id', async (req, res) => {
   try {
     const userId = Number(req.params.id);
     const newProfile = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     await User.update(
       {
         firstname: newProfile.profile.firstName ?? '',

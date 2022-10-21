@@ -3,6 +3,7 @@ import Calendar from 'react-calendar';
 import OneCard from './OneCard';
 
 export default function Cards({ info, user }) {
+  console.log(user);
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
 
