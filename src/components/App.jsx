@@ -21,7 +21,6 @@ export default function App({ productDB, userBack, trush }) {
   return (
     <div className="container">
       <Navbar user={user} setUser={setUser} />
-      <span>{user?.firstname}</span>
       <Routes>
         <Route path="/" element={<Cards setTrash={setTrash} trash={trash} user={user} info={cards} />} />
         <Route path="/reg" element={<Reg setUser={setUser} />} />
