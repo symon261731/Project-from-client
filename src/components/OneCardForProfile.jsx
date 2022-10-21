@@ -1,4 +1,7 @@
 import React from 'react';
+// import Container from 'react-bootstrap/Container';
+// import { Row, Col } from 'react-bootstrap';
+// import MyModal from './MyModal';
 
 export default function OneCardForProfile({ oneCard }) {
   return (
@@ -24,6 +27,11 @@ export default function OneCardForProfile({ oneCard }) {
               <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Подробнее
               </button>
+              {/* <Container>
+                <Row>
+                  <MyModal info={oneCard.info} />
+                </Row>
+              </Container> */}
             </div>
           </div>
         </div>

@@ -3,23 +3,9 @@ import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import MyModal from './MyModal';
 
-export default function OneCard({
-  info, user, trash, setTrash,
-}) {
-  // const onClickHandler = async (e) => {
-  //   e.preventDefault();
-  //   const response = await fetch('/api/trush', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(info),
-  //   });
-  // };
-  const onClickHandler = (e) => {
-    e.preventDefault();
-    setTrash((prev) => [...prev, { info }]);
-  };
+export default function OneCard({ info, user }) {
+
+  console.log(user);
   return (
     <div className="oneCard">
       <li className="card">
@@ -47,7 +33,7 @@ export default function OneCard({
               </Container>
               {user ? (
                 <>
-                  <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
+                  <button type="button" className="btn btn-primary">Купить</button>
                 </>
               ) : null}
             </div>
