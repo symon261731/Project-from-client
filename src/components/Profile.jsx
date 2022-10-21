@@ -93,6 +93,7 @@ export default function Profile({ user, trash }) {
         </ul>
         <button type="button" className="btn btn-info" onClick={editHandler}>Изменить профиль</button>
         <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
+        {/* {trash ? (<p>{trash?.reduce((acc, el) => acc + el.info.sale)}</p> )}  */}
       </div>
       <div className="cards">
         <CardsForProfile trash={trash} />
