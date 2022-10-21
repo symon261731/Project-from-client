@@ -3,8 +3,11 @@ import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import MyModal from './MyModal';
 
-export default function OneCard({ info, user }) {
-
+export default function OneCard({ info, user, setTrash }) {
+  const onClickHandler = (e) => {
+    e.preventDefault();
+    setTrash((prev) => [...prev, { info }]);
+  };
   console.log(user);
   return (
     <div className="oneCard">
@@ -33,7 +36,7 @@ export default function OneCard({ info, user }) {
               </Container>
               {user ? (
                 <>
-                  <button type="button" className="btn btn-primary">Купить</button>
+                  <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
                 </>
               ) : null}
             </div>
