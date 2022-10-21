@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import { Row, Col } from 'react-bootstrap';
+import MyModal from './MyModal';
 
 export default function OneCard({
   info, user, trash, setTrash,
@@ -27,19 +30,21 @@ export default function OneCard({
             <p className="card-text">
               Исходная цена:
               {' '}
-              {info.price}
+              {`${info.price.toFixed(2)} руб.`}
             </p>
             <div className="priceTXT1">
               <p className="card-text">
                 Цена со скидкой:
                 {' '}
-                {Number(info.price - ((info.price / 100) * info.sale))}
+                {`${(Number(info.price - ((info.price / 100) * info.sale))).toFixed(2)} руб.`}
               </p>
             </div>
             <div className="buttons">
-              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Подробнее
-              </button>
+              <Container>
+                <Row>
+                  <MyModal info={info} />
+                </Row>
+              </Container>
               {user ? (
                 <>
                   <button onClick={onClickHandler} type="button" className="btn btn-primary">Купить</button>
