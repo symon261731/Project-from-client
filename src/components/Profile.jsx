@@ -87,11 +87,11 @@ export default function Profile({ user, trash }) {
             <textarea onChange={editData} disabled={edit} name="phone" value={profile?.phone} /> */}
             <div className="input-group mb-3">
               <span className="input-group-text" id="inputGroup-sizing-default">Телефон: </span>
-              <input type="text" onChange={editData} disabled={edit} name="firstName" value={profile?.phone} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+              <input type="text" onChange={editData} disabled={edit} name="phone" value={profile?.phone} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
             </div>
           </li>
         </ul>
-        <button type="button" className="btn btn-info" onClick={editHandler} style={{ marginRight: '5px' }}>Изменить профиль</button>
+        <button type="button" className="btn btn-info" onClick={editHandler}>Изменить профиль</button>
         <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
       </div>
       <div className="cards">

@@ -6,8 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-public/vendor
-public/app
+public/vendor.js
+public/app.js
 sessions
 
 

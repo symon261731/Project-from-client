@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/reg', async (req, res) => {
   // проверка на аватарку
-  if (req.body.avatar.includes('https://www') === false) { req.body.avatar = 'https://www.meme-arsenal.com/memes/fefac21eda463aa9a307c7cfdbea1bee.jpg'; }
+  if (req.body.avatar.includes('http://www') === false || req.body.avatar.includes('https://www') === false) { req.body.avatar = 'https://www.meme-arsenal.com/memes/fefac21eda463aa9a307c7cfdbea1bee.jpg'; }
 
   const {
     login,
