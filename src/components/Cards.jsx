@@ -46,7 +46,7 @@ export default function Cards({ info, user }) {
       >
         {info?.map((el) => <OneCard key={el.id} info={el} user={user} />)}
       </ul>
-      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      {/* <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -54,7 +54,7 @@ export default function Cards({ info, user }) {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              <p>Описание</p>
+              <p name="describe">Описание</p>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -62,7 +62,12 @@ export default function Cards({ info, user }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* <Container>
+        <Row>
+          <MyModal />
+        </Row>
+      </Container> */}
     </>
   );
 }
