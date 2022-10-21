@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import { Row, Col } from 'react-bootstrap';
+import MyModal from './MyModal';
 
 export default function OneCard({ info, user }) {
   // const onClickHandler = async (e) => {
@@ -11,6 +14,7 @@ export default function OneCard({ info, user }) {
   //     body: JSON.stringify(info),
   //   });
   // };
+
   console.log(user);
   return (
     <div className="oneCard">
@@ -32,9 +36,11 @@ export default function OneCard({ info, user }) {
               </p>
             </div>
             <div className="buttons">
-              <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Подробнее
-              </button>
+              <Container>
+                <Row>
+                  <MyModal info={info} />
+                </Row>
+              </Container>
               {user ? (
                 <>
                   <button type="button" className="btn btn-primary">Купить</button>
