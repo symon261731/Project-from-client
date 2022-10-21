@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CardsForProfile from './CardsForProfile';
 // import { Link } from 'react-router-dom';
 
-export default function Profile({ user, filterCards }) {
+export default function Profile({ user, trash }) {
   // const [firstName, setFirstName] = useState(user.firstname || '');
   // const [city, setCity] = useState(user.city || '');
   // const [phone, setPhone] = useState(user.phone || '');
@@ -42,7 +42,7 @@ export default function Profile({ user, filterCards }) {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{ display: 'flex' }}>
       <div className="profile">
         <h5 className="card-title" style={{ fontSize: '20px', marginBottom: '5px' }}>Профиль</h5>
         <div className="text-center" style={{ marginBottom: '5px' }}>
@@ -79,7 +79,7 @@ export default function Profile({ user, filterCards }) {
             <textarea onChange={editData} disabled={edit} name="city" value={profile?.city} /> */}
             <div className="input-group mb-3">
               <span className="input-group-text" id="inputGroup-sizing-default">Город: </span>
-              <input type="text" onChange={editData} disabled={edit} name="firstName" value={profile?.city} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+              <input type="text" onChange={editData} disabled={edit} name="city" value={profile?.city} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
             </div>
           </li>
           <li>
@@ -95,7 +95,7 @@ export default function Profile({ user, filterCards }) {
         <button type="button" className="btn btn-info" onClick={sendEdit}>Принять изменения</button>
       </div>
       <div className="cards">
-        <CardsForProfile />
+        <CardsForProfile trash={trash} />
       </div>
     </div>
   );
