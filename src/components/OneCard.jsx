@@ -14,16 +14,19 @@ export default function OneCard({ info, user }) {
   console.log(user);
   return (
     <div className="oneCard">
-      <li className="card">
+      <li className="card" style={{ borderRadius: '20px' }}>
         <img src={info.url} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{info.name}</h5>
-          <div className="priceTXT">
+        </div>
+        <div className="priceTXT">
+          <div className="pipi">
             <p className="card-text">
               Исходная цена:
               {' '}
               {`${info.price.toFixed(2)} руб.`}
             </p>
+
             <div className="priceTXT1">
               <p className="card-text">
                 Цена со скидкой:
@@ -31,17 +34,18 @@ export default function OneCard({ info, user }) {
                 {`${(Number(info.price - ((info.price / 100) * info.sale))).toFixed(2)} руб.`}
               </p>
             </div>
-            <div className="buttons">
-              <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Подробнее
-              </button>
-              {user ? (
-                <>
-                  <button type="button" className="btn btn-primary">Купить</button>
-                </>
-              ) : null}
-            </div>
+
           </div>
+        </div>
+        <div className="buttons">
+          <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Подробнее
+          </button>
+          {user ? (
+            <>
+              <button type="button" className="btn btn-outline-primary">Купить</button>
+            </>
+          ) : null}
         </div>
       </li>
 
